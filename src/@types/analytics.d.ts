@@ -1,7 +1,6 @@
 declare type LoginMethod = 'Google' | 'Facebook' | 'BasicAuth'
 
 declare type SendPageViewOptions = {
-  page_location?: string;
   client_id?: string;
   page_title: string;
 }

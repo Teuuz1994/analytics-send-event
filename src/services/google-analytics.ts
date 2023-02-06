@@ -26,11 +26,11 @@ export class GoogleAnalytics {
 
   static sendPageView(options: SendPageViewOptions) {
     try {
-      const { page_location, page_title, client_id } = options
+      const { page_title, client_id } = options
 
       if (options.client_id) {
         window.gtag('event', 'page_view', {
-          page_location: page_location ?? window.location.pathname + window.location.search,
+          page_location: window.location.pathname + window.location.search,
           page_title,
           client_id
         })
@@ -38,7 +38,7 @@ export class GoogleAnalytics {
       }
 
       window.gtag('event', 'page_view', {
-        page_location: page_location ?? window.location.pathname + window.location.search,
+        page_location: window.location.pathname + window.location.search,
         page_title,
       })
     } catch (error) {
